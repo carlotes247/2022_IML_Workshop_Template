@@ -216,6 +216,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &944283156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275b1cfd51503be4bae9a02ffb014b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: 03_Difficult
+  ProjectID: 95ae324d-2bef-4d27-a8be-dbd8b7d76740
+  NumIterations: 0
+  CurrentIteration:
+    GraphID: 
+    SceneName: 
+    TotalSeconds: 0
+    ModelData:
+      GraphID: 
+      ModelID: 
+      TrainingData: []
+      TrainingFeatures: []
+      TrainingGameObjects: []
+      FeaturesInUse: []
+      GameObjectsInUse: []
+      AllPossibleTrainingFeaturesData: []
+      AllPossibleTestingFeaturesData: []
+  IMLIterations:
+  - GraphID: 20536066-b4e9-46eb-9c3b-c6ba74ae3aaf
+    SceneName: 03_Difficult
+    TotalSeconds: 0
+    ModelData:
+      GraphID: 20536066-b4e9-46eb-9c3b-c6ba74ae3aaf
+      ModelID: 1335530f-b776-4b5a-9cc3-809dee279728
+      TrainingData: []
+      TrainingFeatures: []
+      TrainingGameObjects: []
+      FeaturesInUse: []
+      GameObjectsInUse: []
+      AllPossibleTrainingFeaturesData: []
+      AllPossibleTestingFeaturesData: []
 --- !u!1 &972731406
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollectingData: 0
   m_MLComponent: {fileID: 972731408}
-  m_Data: {fileID: 1095441783}
+  m_Data: {fileID: 944283156}
   m_ProjectID: 95ae324d-2bef-4d27-a8be-dbd8b7d76740
   m_DataPath: C:/Users/carlo.LAPTOP-UJR5JBB1/Documents/Unity_Projects/2022_IML_Workshop_Template/Assets\InteractML/Data\Telemetry
   m_Uploader: {fileID: 0}
@@ -300,36 +343,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1095441783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275b1cfd51503be4bae9a02ffb014b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: 03_Difficult
-  ProjectID: 95ae324d-2bef-4d27-a8be-dbd8b7d76740
-  NumIterations: 0
-  CurrentIteration:
-    GraphID: 
-    SceneName: 
-    TotalSeconds: 0
-    ModelData:
-      GraphID: 
-      ModelID: 
-      TrainingData: []
-      TrainingFeatures: []
-      TrainingGameObjects: []
-      FeaturesInUse: []
-      GameObjectsInUse: []
-      AllPossibleTrainingFeaturesData: []
-      AllPossibleTestingFeaturesData: []
-  IMLIterations: []
 --- !u!1 &2026636188
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,7 +74,10 @@ MonoBehaviour:
       _node: {fileID: -7253511198426295324}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Out
+        node: {fileID: 406904271329478657}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -87,6 +90,11 @@ MonoBehaviour:
       - fieldName: TargetValues
         node: {fileID: -6680221188646227306}
         reroutePoints: []
+      - fieldName: In
+        node: {fileID: 406904271329478657}
+        reroutePoints:
+        - {x: 16, y: 160}
+        - {x: -780.0236, y: 172.04999}
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -95,16 +103,16 @@ MonoBehaviour:
   numberInComponentList: -1
   ValueName: 
   m_In: 0
-  m_Value: 0
-  m_Out: 0
+  m_Value: 1
+  m_Out: 1
   ReceivingData: 0
   FeatureValueReceivingData: 00
-  InputConnected: 0
-  Counter: 2
+  InputConnected: 1
+  Counter: 5
   Count: 5
   ToggleSwitches: 01
   ReceivedValue:
-  - 0
+  - 1
 --- !u!114 &-6680221188646227306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +230,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: inputValue
-        node: {fileID: 6150751283683134699}
+        node: {fileID: -2220039629162308240}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -232,7 +240,10 @@ MonoBehaviour:
       _node: {fileID: -6680221188646227306}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: inputValue
+        node: {fileID: 3042892731681839407}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 1
@@ -272,6 +283,26 @@ MonoBehaviour:
   canCollect: 1
   listNo: 0
   SubFolderDataPath: 
+--- !u!114 &-5057954988160834954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137e83599788d424eb27a7264acd4b03, type: 3}
+  m_Name: Text Note
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -728, y: -24}
+  ports:
+    keys: []
+    values: []
+  id: e1b284bb-cb76-479f-8c39-c56cc6d04cc7
+  numberInComponentList: -1
+  note: ALLOWS TO CHANGE LABEL WITH VR CONTROLLER BUTTONS
 --- !u!114 &-3588947967771969565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,11 +355,143 @@ MonoBehaviour:
   ReceivingData: 0
   FeatureValueReceivingData: 00
   InputConnected: 1
-  Counter: 2
+  Counter: 5
   Count: 5
   ToggleSwitches: 01
   ReceivedValue:
   - 0
+--- !u!114 &-2220039629162308240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -184, y: 264}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: -2220039629162308240}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: ToggleRecordingInputBoolPort
+        node: {fileID: -6680221188646227306}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 5923a185-d1b0-4ad7-b3b8-c735b63c6fbd
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 0
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 0
+  inputs: 0
+  triggerType: 0
+--- !u!114 &-1433154880239108631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 808, y: 552}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: -1433154880239108631}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: ToggleRunInputBoolPort
+        node: {fileID: 3781440787987737009}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 0d1f6928-3150-4230-8337-75e7b8e43190
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 0
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 1
+  inputs: 0
+  triggerType: 0
+--- !u!114 &-1084344776362032768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1176, y: 328}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: -1084344776362032768}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Add
+        node: {fileID: 406904271329478657}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 6e1797b9-05be-4c03-8bf6-058cc30d6a26
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 2
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 0
+  inputs: 0
+  triggerType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,11 +512,18 @@ MonoBehaviour:
   - {fileID: 5221985490819546263}
   - {fileID: -3588947967771969565}
   - {fileID: 9118341979545055148}
-  - {fileID: 6150751283683134699}
-  - {fileID: 137270946323557187}
+  - {fileID: 406904271329478657}
+  - {fileID: 1667021955232556687}
+  - {fileID: -1084344776362032768}
+  - {fileID: 2135047724831807445}
+  - {fileID: -2220039629162308240}
+  - {fileID: 3042892731681839407}
+  - {fileID: -5057954988160834954}
+  - {fileID: -1433154880239108631}
+  - {fileID: 2261831373787892122}
   SceneComponent: {fileID: 0}
   m_ID: 98878b59-2538-4cec-85a3-3214fba8f13d
---- !u!114 &137270946323557187
+--- !u!114 &406904271329478657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,360 +532,271 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cd80d6ec5a1f7540bcf4649926cc13f, type: 3}
-  m_Name: Keyboard Press
+  m_Script: {fileID: 11500000, guid: 79d28ecf18e4f9f4788a9489f019e8be, type: 3}
+  m_Name: Add Substract Amount
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 899.3257, y: 357.96143}
+  position: {x: -712, y: 200}
+  ports:
+    keys:
+    - In
+    - Out
+    - Amount
+    - Add
+    - Substract
+    values:
+    - _fieldName: In
+      _node: {fileID: 406904271329478657}
+      _typeQualifiedName: InteractML.IMLBaseDataType, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_Out
+        node: {fileID: -7253511198426295324}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: 406904271329478657}
+      _typeQualifiedName: System.Single[], mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: m_In
+        node: {fileID: -7253511198426295324}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Amount
+      _node: {fileID: 406904271329478657}
+      _typeQualifiedName: InteractML.IMLBaseDataType, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_Out
+        node: {fileID: 1667021955232556687}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Add
+      _node: {fileID: 406904271329478657}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: inputValue
+        node: {fileID: -1084344776362032768}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Substract
+      _node: {fileID: 406904271329478657}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: inputValue
+        node: {fileID: 2135047724831807445}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  id: 52fd8ee1-504f-4164-b64a-dc41f5abaaf3
+  numberInComponentList: -1
+  Out:
+  - 1
+  Add: 0
+  Substract: 0
+--- !u!114 &1667021955232556687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d534d44a87f50e4f80bf8cd2142328f, type: 3}
+  m_Name: Integer
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1192, y: 56}
+  ports:
+    keys:
+    - m_In
+    - m_Out
+    values:
+    - _fieldName: m_In
+      _node: {fileID: 1667021955232556687}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: m_Out
+      _node: {fileID: 1667021955232556687}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Amount
+        node: {fileID: 406904271329478657}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 8d148af3-e101-4b8f-a978-0e3b125654a0
+  numberInComponentList: -1
+  ValueName: 
+  m_In: 0
+  m_Value: 1
+  m_Out: 1
+  ReceivingData: 0
+  FeatureValueReceivingData: 00
+  InputConnected: 0
+  Counter: 3
+  Count: 5
+  ToggleSwitches: 01
+  ReceivedValue:
+  - 1
+--- !u!114 &2135047724831807445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1160, y: 600}
   ports:
     keys:
     - inputValue
     values:
     - _fieldName: inputValue
-      _node: {fileID: 137270946323557187}
+      _node: {fileID: 2135047724831807445}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: ToggleRunInputBoolPort
+      - fieldName: Substract
+        node: {fileID: 406904271329478657}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 97bf36bc-c749-4e77-8e37-3b15b138005e
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 3
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 0
+  inputs: 0
+  triggerType: 0
+--- !u!114 &2261831373787892122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 808, y: 280}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: 2261831373787892122}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: ToggleTrainInputBoolPort
         node: {fileID: 3781440787987737009}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  id: 7662ca12-bdb9-4b65-be92-e5af71f3e093
+  id: 61bf4c5c-62fa-49b5-8ec8-32471cea007d
   numberInComponentList: -1
   inputValue: 0
-  inputNo: 63
+  inputNo: 1
   trigger: 0
   buttonOptions:
-  - None
-  - Backspace
-  - Tab
-  - Clear
-  - Return
-  - Pause
-  - Escape
-  - Space
-  - Exclaim
-  - DoubleQuote
-  - Hash
-  - Dollar
-  - Percent
-  - Ampersand
-  - Quote
-  - LeftParen
-  - RightParen
-  - Asterisk
-  - Plus
-  - Comma
-  - Minus
-  - Period
-  - Slash
-  - Alpha0
-  - Alpha1
-  - Alpha2
-  - Alpha3
-  - Alpha4
-  - Alpha5
-  - Alpha6
-  - Alpha7
-  - Alpha8
-  - Alpha9
-  - Colon
-  - Semicolon
-  - Less
-  - Equals
-  - Greater
-  - Question
-  - At
-  - LeftBracket
-  - Backslash
-  - RightBracket
-  - Caret
-  - Underscore
-  - BackQuote
-  - A
-  - B
-  - C
-  - D
-  - E
-  - F
-  - G
-  - H
-  - I
-  - J
-  - K
-  - L
-  - M
-  - N
-  - O
-  - P
-  - Q
-  - R
-  - S
-  - T
-  - U
-  - V
-  - W
-  - X
-  - Y
-  - Z
-  - LeftCurlyBracket
-  - Pipe
-  - RightCurlyBracket
-  - Tilde
-  - Delete
-  - Keypad0
-  - Keypad1
-  - Keypad2
-  - Keypad3
-  - Keypad4
-  - Keypad5
-  - Keypad6
-  - Keypad7
-  - Keypad8
-  - Keypad9
-  - KeypadPeriod
-  - KeypadDivide
-  - KeypadMultiply
-  - KeypadMinus
-  - KeypadPlus
-  - KeypadEnter
-  - KeypadEquals
-  - UpArrow
-  - DownArrow
-  - RightArrow
-  - LeftArrow
-  - Insert
-  - Home
-  - End
-  - PageUp
-  - PageDown
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - F11
-  - F12
-  - F13
-  - F14
-  - F15
-  - Numlock
-  - CapsLock
-  - ScrollLock
-  - RightShift
-  - LeftShift
-  - RightControl
-  - LeftControl
-  - RightAlt
-  - LeftAlt
-  - RightCommand
-  - RightApple
-  - LeftCommand
-  - LeftApple
-  - LeftWindows
-  - RightWindows
-  - AltGr
-  - Help
-  - Print
-  - SysReq
-  - Break
-  - Menu
-  - Mouse0
-  - Mouse1
-  - Mouse2
-  - Mouse3
-  - Mouse4
-  - Mouse5
-  - Mouse6
-  - JoystickButton0
-  - JoystickButton1
-  - JoystickButton2
-  - JoystickButton3
-  - JoystickButton4
-  - JoystickButton5
-  - JoystickButton6
-  - JoystickButton7
-  - JoystickButton8
-  - JoystickButton9
-  - JoystickButton10
-  - JoystickButton11
-  - JoystickButton12
-  - JoystickButton13
-  - JoystickButton14
-  - JoystickButton15
-  - JoystickButton16
-  - JoystickButton17
-  - JoystickButton18
-  - JoystickButton19
-  - Joystick1Button0
-  - Joystick1Button1
-  - Joystick1Button2
-  - Joystick1Button3
-  - Joystick1Button4
-  - Joystick1Button5
-  - Joystick1Button6
-  - Joystick1Button7
-  - Joystick1Button8
-  - Joystick1Button9
-  - Joystick1Button10
-  - Joystick1Button11
-  - Joystick1Button12
-  - Joystick1Button13
-  - Joystick1Button14
-  - Joystick1Button15
-  - Joystick1Button16
-  - Joystick1Button17
-  - Joystick1Button18
-  - Joystick1Button19
-  - Joystick2Button0
-  - Joystick2Button1
-  - Joystick2Button2
-  - Joystick2Button3
-  - Joystick2Button4
-  - Joystick2Button5
-  - Joystick2Button6
-  - Joystick2Button7
-  - Joystick2Button8
-  - Joystick2Button9
-  - Joystick2Button10
-  - Joystick2Button11
-  - Joystick2Button12
-  - Joystick2Button13
-  - Joystick2Button14
-  - Joystick2Button15
-  - Joystick2Button16
-  - Joystick2Button17
-  - Joystick2Button18
-  - Joystick2Button19
-  - Joystick3Button0
-  - Joystick3Button1
-  - Joystick3Button2
-  - Joystick3Button3
-  - Joystick3Button4
-  - Joystick3Button5
-  - Joystick3Button6
-  - Joystick3Button7
-  - Joystick3Button8
-  - Joystick3Button9
-  - Joystick3Button10
-  - Joystick3Button11
-  - Joystick3Button12
-  - Joystick3Button13
-  - Joystick3Button14
-  - Joystick3Button15
-  - Joystick3Button16
-  - Joystick3Button17
-  - Joystick3Button18
-  - Joystick3Button19
-  - Joystick4Button0
-  - Joystick4Button1
-  - Joystick4Button2
-  - Joystick4Button3
-  - Joystick4Button4
-  - Joystick4Button5
-  - Joystick4Button6
-  - Joystick4Button7
-  - Joystick4Button8
-  - Joystick4Button9
-  - Joystick4Button10
-  - Joystick4Button11
-  - Joystick4Button12
-  - Joystick4Button13
-  - Joystick4Button14
-  - Joystick4Button15
-  - Joystick4Button16
-  - Joystick4Button17
-  - Joystick4Button18
-  - Joystick4Button19
-  - Joystick5Button0
-  - Joystick5Button1
-  - Joystick5Button2
-  - Joystick5Button3
-  - Joystick5Button4
-  - Joystick5Button5
-  - Joystick5Button6
-  - Joystick5Button7
-  - Joystick5Button8
-  - Joystick5Button9
-  - Joystick5Button10
-  - Joystick5Button11
-  - Joystick5Button12
-  - Joystick5Button13
-  - Joystick5Button14
-  - Joystick5Button15
-  - Joystick5Button16
-  - Joystick5Button17
-  - Joystick5Button18
-  - Joystick5Button19
-  - Joystick6Button0
-  - Joystick6Button1
-  - Joystick6Button2
-  - Joystick6Button3
-  - Joystick6Button4
-  - Joystick6Button5
-  - Joystick6Button6
-  - Joystick6Button7
-  - Joystick6Button8
-  - Joystick6Button9
-  - Joystick6Button10
-  - Joystick6Button11
-  - Joystick6Button12
-  - Joystick6Button13
-  - Joystick6Button14
-  - Joystick6Button15
-  - Joystick6Button16
-  - Joystick6Button17
-  - Joystick6Button18
-  - Joystick6Button19
-  - Joystick7Button0
-  - Joystick7Button1
-  - Joystick7Button2
-  - Joystick7Button3
-  - Joystick7Button4
-  - Joystick7Button5
-  - Joystick7Button6
-  - Joystick7Button7
-  - Joystick7Button8
-  - Joystick7Button9
-  - Joystick7Button10
-  - Joystick7Button11
-  - Joystick7Button12
-  - Joystick7Button13
-  - Joystick7Button14
-  - Joystick7Button15
-  - Joystick7Button16
-  - Joystick7Button17
-  - Joystick7Button18
-  - Joystick7Button19
-  - Joystick8Button0
-  - Joystick8Button1
-  - Joystick8Button2
-  - Joystick8Button3
-  - Joystick8Button4
-  - Joystick8Button5
-  - Joystick8Button6
-  - Joystick8Button7
-  - Joystick8Button8
-  - Joystick8Button9
-  - Joystick8Button10
-  - Joystick8Button11
-  - Joystick8Button12
-  - Joystick8Button13
-  - Joystick8Button14
-  - Joystick8Button15
-  - Joystick8Button16
-  - Joystick8Button17
-  - Joystick8Button18
-  - Joystick8Button19
-  name: Keyboard Input
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 1
+  inputs: 0
+  triggerType: 0
+--- !u!114 &3042892731681839407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -168, y: 568}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: 3042892731681839407}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: DeleteAllExamplesBoolPort
+        node: {fileID: -6680221188646227306}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: ad08af0d-9daf-463a-be4e-50d53c7e46f3
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 1
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 0
+  inputs: 0
+  triggerType: 0
 --- !u!114 &3781440787987737009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,7 +869,10 @@ MonoBehaviour:
       _node: {fileID: 3781440787987737009}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: inputValue
+        node: {fileID: 2261831373787892122}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -799,7 +883,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: inputValue
-        node: {fileID: 137270946323557187}
+        node: {fileID: -1433154880239108631}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -829,7 +913,7 @@ MonoBehaviour:
   - 0
   DelayedPredictedOutput: []
   m_NumExamplesTrainedOn: 0
-  m_ExpectedInputList: 05000000
+  m_ExpectedInputList: 
   m_ExpectedOutputList: 01000000
   m_trainingType: 0
   m_LearningType: 0
@@ -901,369 +985,6 @@ MonoBehaviour:
   m_VelocityExtracted:
     m_Values: []
   m_LastFrameFeatureValue: []
---- !u!114 &6150751283683134699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cd80d6ec5a1f7540bcf4649926cc13f, type: 3}
-  m_Name: Keyboard Press
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -283.44464, y: 318.53574}
-  ports:
-    keys:
-    - inputValue
-    values:
-    - _fieldName: inputValue
-      _node: {fileID: 6150751283683134699}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: ToggleRecordingInputBoolPort
-        node: {fileID: -6680221188646227306}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  id: 3f96bb24-8b65-4b49-acdb-d43fd5325640
-  numberInComponentList: -1
-  inputValue: 0
-  inputNo: 48
-  trigger: 0
-  buttonOptions:
-  - None
-  - Backspace
-  - Tab
-  - Clear
-  - Return
-  - Pause
-  - Escape
-  - Space
-  - Exclaim
-  - DoubleQuote
-  - Hash
-  - Dollar
-  - Percent
-  - Ampersand
-  - Quote
-  - LeftParen
-  - RightParen
-  - Asterisk
-  - Plus
-  - Comma
-  - Minus
-  - Period
-  - Slash
-  - Alpha0
-  - Alpha1
-  - Alpha2
-  - Alpha3
-  - Alpha4
-  - Alpha5
-  - Alpha6
-  - Alpha7
-  - Alpha8
-  - Alpha9
-  - Colon
-  - Semicolon
-  - Less
-  - Equals
-  - Greater
-  - Question
-  - At
-  - LeftBracket
-  - Backslash
-  - RightBracket
-  - Caret
-  - Underscore
-  - BackQuote
-  - A
-  - B
-  - C
-  - D
-  - E
-  - F
-  - G
-  - H
-  - I
-  - J
-  - K
-  - L
-  - M
-  - N
-  - O
-  - P
-  - Q
-  - R
-  - S
-  - T
-  - U
-  - V
-  - W
-  - X
-  - Y
-  - Z
-  - LeftCurlyBracket
-  - Pipe
-  - RightCurlyBracket
-  - Tilde
-  - Delete
-  - Keypad0
-  - Keypad1
-  - Keypad2
-  - Keypad3
-  - Keypad4
-  - Keypad5
-  - Keypad6
-  - Keypad7
-  - Keypad8
-  - Keypad9
-  - KeypadPeriod
-  - KeypadDivide
-  - KeypadMultiply
-  - KeypadMinus
-  - KeypadPlus
-  - KeypadEnter
-  - KeypadEquals
-  - UpArrow
-  - DownArrow
-  - RightArrow
-  - LeftArrow
-  - Insert
-  - Home
-  - End
-  - PageUp
-  - PageDown
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - F11
-  - F12
-  - F13
-  - F14
-  - F15
-  - Numlock
-  - CapsLock
-  - ScrollLock
-  - RightShift
-  - LeftShift
-  - RightControl
-  - LeftControl
-  - RightAlt
-  - LeftAlt
-  - RightCommand
-  - RightApple
-  - LeftCommand
-  - LeftApple
-  - LeftWindows
-  - RightWindows
-  - AltGr
-  - Help
-  - Print
-  - SysReq
-  - Break
-  - Menu
-  - Mouse0
-  - Mouse1
-  - Mouse2
-  - Mouse3
-  - Mouse4
-  - Mouse5
-  - Mouse6
-  - JoystickButton0
-  - JoystickButton1
-  - JoystickButton2
-  - JoystickButton3
-  - JoystickButton4
-  - JoystickButton5
-  - JoystickButton6
-  - JoystickButton7
-  - JoystickButton8
-  - JoystickButton9
-  - JoystickButton10
-  - JoystickButton11
-  - JoystickButton12
-  - JoystickButton13
-  - JoystickButton14
-  - JoystickButton15
-  - JoystickButton16
-  - JoystickButton17
-  - JoystickButton18
-  - JoystickButton19
-  - Joystick1Button0
-  - Joystick1Button1
-  - Joystick1Button2
-  - Joystick1Button3
-  - Joystick1Button4
-  - Joystick1Button5
-  - Joystick1Button6
-  - Joystick1Button7
-  - Joystick1Button8
-  - Joystick1Button9
-  - Joystick1Button10
-  - Joystick1Button11
-  - Joystick1Button12
-  - Joystick1Button13
-  - Joystick1Button14
-  - Joystick1Button15
-  - Joystick1Button16
-  - Joystick1Button17
-  - Joystick1Button18
-  - Joystick1Button19
-  - Joystick2Button0
-  - Joystick2Button1
-  - Joystick2Button2
-  - Joystick2Button3
-  - Joystick2Button4
-  - Joystick2Button5
-  - Joystick2Button6
-  - Joystick2Button7
-  - Joystick2Button8
-  - Joystick2Button9
-  - Joystick2Button10
-  - Joystick2Button11
-  - Joystick2Button12
-  - Joystick2Button13
-  - Joystick2Button14
-  - Joystick2Button15
-  - Joystick2Button16
-  - Joystick2Button17
-  - Joystick2Button18
-  - Joystick2Button19
-  - Joystick3Button0
-  - Joystick3Button1
-  - Joystick3Button2
-  - Joystick3Button3
-  - Joystick3Button4
-  - Joystick3Button5
-  - Joystick3Button6
-  - Joystick3Button7
-  - Joystick3Button8
-  - Joystick3Button9
-  - Joystick3Button10
-  - Joystick3Button11
-  - Joystick3Button12
-  - Joystick3Button13
-  - Joystick3Button14
-  - Joystick3Button15
-  - Joystick3Button16
-  - Joystick3Button17
-  - Joystick3Button18
-  - Joystick3Button19
-  - Joystick4Button0
-  - Joystick4Button1
-  - Joystick4Button2
-  - Joystick4Button3
-  - Joystick4Button4
-  - Joystick4Button5
-  - Joystick4Button6
-  - Joystick4Button7
-  - Joystick4Button8
-  - Joystick4Button9
-  - Joystick4Button10
-  - Joystick4Button11
-  - Joystick4Button12
-  - Joystick4Button13
-  - Joystick4Button14
-  - Joystick4Button15
-  - Joystick4Button16
-  - Joystick4Button17
-  - Joystick4Button18
-  - Joystick4Button19
-  - Joystick5Button0
-  - Joystick5Button1
-  - Joystick5Button2
-  - Joystick5Button3
-  - Joystick5Button4
-  - Joystick5Button5
-  - Joystick5Button6
-  - Joystick5Button7
-  - Joystick5Button8
-  - Joystick5Button9
-  - Joystick5Button10
-  - Joystick5Button11
-  - Joystick5Button12
-  - Joystick5Button13
-  - Joystick5Button14
-  - Joystick5Button15
-  - Joystick5Button16
-  - Joystick5Button17
-  - Joystick5Button18
-  - Joystick5Button19
-  - Joystick6Button0
-  - Joystick6Button1
-  - Joystick6Button2
-  - Joystick6Button3
-  - Joystick6Button4
-  - Joystick6Button5
-  - Joystick6Button6
-  - Joystick6Button7
-  - Joystick6Button8
-  - Joystick6Button9
-  - Joystick6Button10
-  - Joystick6Button11
-  - Joystick6Button12
-  - Joystick6Button13
-  - Joystick6Button14
-  - Joystick6Button15
-  - Joystick6Button16
-  - Joystick6Button17
-  - Joystick6Button18
-  - Joystick6Button19
-  - Joystick7Button0
-  - Joystick7Button1
-  - Joystick7Button2
-  - Joystick7Button3
-  - Joystick7Button4
-  - Joystick7Button5
-  - Joystick7Button6
-  - Joystick7Button7
-  - Joystick7Button8
-  - Joystick7Button9
-  - Joystick7Button10
-  - Joystick7Button11
-  - Joystick7Button12
-  - Joystick7Button13
-  - Joystick7Button14
-  - Joystick7Button15
-  - Joystick7Button16
-  - Joystick7Button17
-  - Joystick7Button18
-  - Joystick7Button19
-  - Joystick8Button0
-  - Joystick8Button1
-  - Joystick8Button2
-  - Joystick8Button3
-  - Joystick8Button4
-  - Joystick8Button5
-  - Joystick8Button6
-  - Joystick8Button7
-  - Joystick8Button8
-  - Joystick8Button9
-  - Joystick8Button10
-  - Joystick8Button11
-  - Joystick8Button12
-  - Joystick8Button13
-  - Joystick8Button14
-  - Joystick8Button15
-  - Joystick8Button16
-  - Joystick8Button17
-  - Joystick8Button18
-  - Joystick8Button19
-  name: Keyboard Input
 --- !u!114 &9118341979545055148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,7 +1018,7 @@ MonoBehaviour:
   id: 51bbd722-0e0e-4518-89dc-7d87a1fb038c
   numberInComponentList: -1
   m_ScriptInternal: {fileID: 0}
-  ScriptHashCode: 20676
+  ScriptHashCode: 21120
   m_PortsPerFieldInfo:
     m_keys:
     - _fieldName: colour

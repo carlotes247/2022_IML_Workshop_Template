@@ -1,5 +1,341 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8004080106520747666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d534d44a87f50e4f80bf8cd2142328f, type: 3}
+  m_Name: Integer
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 232, y: 168}
+  ports:
+    keys:
+    - m_In
+    - m_Out
+    values:
+    - _fieldName: m_In
+      _node: {fileID: -8004080106520747666}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Out
+        node: {fileID: -5762200820488016398}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: m_Out
+      _node: {fileID: -8004080106520747666}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: TargetValues
+        node: {fileID: 5520899821732243921}
+        reroutePoints: []
+      - fieldName: In
+        node: {fileID: -5762200820488016398}
+        reroutePoints:
+        - {x: 498.01617, y: 444.86835}
+        - {x: -315.24997, y: 444.86835}
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 6ffc548a-5b62-4d1f-b8f5-e9dad07c8f1b
+  numberInComponentList: -1
+  ValueName: 
+  m_In: 0
+  m_Value: 1
+  m_Out: 1
+  ReceivingData: 0
+  FeatureValueReceivingData: 00
+  InputConnected: 1
+  Counter: 5
+  Count: 5
+  ToggleSwitches: 01
+  ReceivedValue:
+  - 1
+--- !u!114 &-7411984081967750862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -616, y: 1112}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: -7411984081967750862}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Substract
+        node: {fileID: -5762200820488016398}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 1d6d918c-803f-4110-aaf0-661f6608d9d6
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 3
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 0
+  inputs: 0
+  triggerType: 0
+--- !u!114 &-5762200820488016398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d28ecf18e4f9f4788a9489f019e8be, type: 3}
+  m_Name: Add Substract Amount
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -241.12416, y: 495.69748}
+  ports:
+    keys:
+    - In
+    - Out
+    - Amount
+    - Add
+    - Substract
+    values:
+    - _fieldName: In
+      _node: {fileID: -5762200820488016398}
+      _typeQualifiedName: InteractML.IMLBaseDataType, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_Out
+        node: {fileID: -8004080106520747666}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Out
+      _node: {fileID: -5762200820488016398}
+      _typeQualifiedName: System.Single[], mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: m_In
+        node: {fileID: -8004080106520747666}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Amount
+      _node: {fileID: -5762200820488016398}
+      _typeQualifiedName: InteractML.IMLBaseDataType, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_Out
+        node: {fileID: -1639621664040503897}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Add
+      _node: {fileID: -5762200820488016398}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: inputValue
+        node: {fileID: -1253354663978652785}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Substract
+      _node: {fileID: -5762200820488016398}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: inputValue
+        node: {fileID: -7411984081967750862}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  id: 37ff4bc6-f8ac-4f35-b48a-54c12f88d5d0
+  numberInComponentList: -1
+  Out:
+  - 1
+  Add: 0
+  Substract: 0
+--- !u!114 &-1639621664040503897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d534d44a87f50e4f80bf8cd2142328f, type: 3}
+  m_Name: Integer
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -616, y: 584}
+  ports:
+    keys:
+    - m_In
+    - m_Out
+    values:
+    - _fieldName: m_In
+      _node: {fileID: -1639621664040503897}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: m_Out
+      _node: {fileID: -1639621664040503897}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Amount
+        node: {fileID: -5762200820488016398}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 5287e958-6584-4875-b9db-6bb559c12ddc
+  numberInComponentList: -1
+  ValueName: 
+  m_In: 0
+  m_Value: 1
+  m_Out: 1
+  ReceivingData: 0
+  FeatureValueReceivingData: 00
+  InputConnected: 0
+  Counter: 4
+  Count: 5
+  ToggleSwitches: 01
+  ReceivedValue:
+  - 1
+--- !u!114 &-1253354663978652785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -616, y: 840}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: -1253354663978652785}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Add
+        node: {fileID: -5762200820488016398}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: dff8683d-b45c-4ffd-8c81-5e07ea0db6cf
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 2
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 0
+  inputs: 0
+  triggerType: 0
+--- !u!114 &-1106874907089014452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 952.79816, y: 1046.6506}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: -1106874907089014452}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: ToggleRunInputBoolPort
+        node: {fileID: 7545419278234862598}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 42550b4e-d673-4920-8aad-9d2a93f5fd63
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 0
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 1
+  inputs: 0
+  triggerType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,8 +351,129 @@ MonoBehaviour:
   nodes:
   - {fileID: 7545419278234862598}
   - {fileID: 5520899821732243921}
+  - {fileID: -8004080106520747666}
+  - {fileID: 4425756228278500355}
+  - {fileID: 5976161792321578834}
+  - {fileID: -5762200820488016398}
+  - {fileID: -1639621664040503897}
+  - {fileID: -1253354663978652785}
+  - {fileID: -7411984081967750862}
+  - {fileID: 2542703631832319560}
+  - {fileID: 4739352953650667558}
+  - {fileID: -1106874907089014452}
   SceneComponent: {fileID: 0}
   m_ID: 
+--- !u!114 &2542703631832319560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137e83599788d424eb27a7264acd4b03, type: 3}
+  m_Name: Text Note
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: 296}
+  ports:
+    keys: []
+    values: []
+  id: 9928daad-096e-4dfd-8399-84d0e58c23fb
+  numberInComponentList: -1
+  note: 'ALLOWS TO CHANGE LABEL WITH VR CONTROLLER BUTTONS
+
+
+'
+--- !u!114 &4425756228278500355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 264, y: 632}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: 4425756228278500355}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: ToggleRecordingInputBoolPort
+        node: {fileID: 5520899821732243921}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 4863bb68-b01d-4169-b1b3-3d5b1eda1246
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 0
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 0
+  inputs: 0
+  triggerType: 0
+--- !u!114 &4739352953650667558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 952, y: 744}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: 4739352953650667558}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: ToggleTrainInputBoolPort
+        node: {fileID: 7545419278234862598}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: 674113cf-50c7-4aae-90a2-a638c37d23cc
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 1
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 1
+  inputs: 0
+  triggerType: 0
 --- !u!114 &5520899821732243921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +517,10 @@ MonoBehaviour:
       _typeQualifiedName: System.Collections.Generic.List`1[[XNode.Node, XNode, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: m_Out
+        node: {fileID: -8004080106520747666}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -105,7 +565,10 @@ MonoBehaviour:
       _node: {fileID: 5520899821732243921}
       _typeQualifiedName: InteractML.TrainingExamplesNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: IMLTrainingExamplesNodes
+        node: {fileID: 7545419278234862598}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -123,7 +586,10 @@ MonoBehaviour:
       _node: {fileID: 5520899821732243921}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: inputValue
+        node: {fileID: 4425756228278500355}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 1
@@ -132,7 +598,10 @@ MonoBehaviour:
       _node: {fileID: 5520899821732243921}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: inputValue
+        node: {fileID: 5976161792321578834}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 1
@@ -149,17 +618,19 @@ MonoBehaviour:
   id: b2cab688-bc53-4452-bd55-9614429addb6
   numberInComponentList: -1
   InputFeatures: []
-  TargetValues: []
+  TargetValues:
+  - {fileID: -8004080106520747666}
   RecordOneInputBool: 0
   ToggleRecordingInputBool: 0
   DeleteLastInputBool: 0
   DeleteAllInputBool: 0
-  TrainingExamplesNodeToOutput: {fileID: 0}
+  TrainingExamplesNodeToOutput: {fileID: 5520899821732243921}
   ModeOfCollection: 0
   m_DesiredInputsConfig: 
   m_DesiredOutputsConfig: 
   m_UniqueClasses: []
-  MLSystemNodesConnected: []
+  MLSystemNodesConnected:
+  - {fileID: 7545419278234862598}
   StartDelay: 0
   CaptureRate: 10
   RecordTime: -1
@@ -169,6 +640,50 @@ MonoBehaviour:
   canCollect: 0
   listNo: 0
   SubFolderDataPath: 
+--- !u!114 &5976161792321578834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8166fe08bd578f4a90d1fc91b674360, type: 3}
+  m_Name: VR Trigger
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 232, y: 952}
+  ports:
+    keys:
+    - inputValue
+    values:
+    - _fieldName: inputValue
+      _node: {fileID: 5976161792321578834}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: DeleteAllExamplesBoolPort
+        node: {fileID: 5520899821732243921}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  id: b08e5cb2-87ed-4076-8b34-e41b1d803d11
+  numberInComponentList: -1
+  inputValue: 0
+  inputNo: 1
+  trigger: 0
+  buttonOptions:
+  - Trigger
+  - Grip
+  - Primary
+  - Secondary
+  name: VRTrigger
+  hand: 0
+  inputs: 0
+  triggerType: 0
 --- !u!114 &7545419278234862598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +712,10 @@ MonoBehaviour:
       _typeQualifiedName: System.Collections.Generic.List`1[[InteractML.TrainingExamplesNode,
         Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
         mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: TrainingExamplesNodeToOutput
+        node: {fileID: 5520899821732243921}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -234,7 +752,10 @@ MonoBehaviour:
       _node: {fileID: 7545419278234862598}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: inputValue
+        node: {fileID: 4739352953650667558}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -243,14 +764,18 @@ MonoBehaviour:
       _node: {fileID: 7545419278234862598}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: inputValue
+        node: {fileID: -1106874907089014452}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
   id: ff18be83-028f-4658-886f-2a0bcc7ceb50
   numberInComponentList: -1
-  IMLTrainingExamplesNodes: []
+  IMLTrainingExamplesNodes:
+  - {fileID: 5520899821732243921}
   InputFeatures: []
   ToggleTrainInputBool: 0
   ToggleRunInputBool: 0
@@ -269,9 +794,9 @@ MonoBehaviour:
   TrainOnPlaymodeChange: 0
   RunOnAwake: 0
   matchLiveDataInputs: 1
-  matchVectorLength: 1
-  warning: 
-  error: 0
+  matchVectorLength: 0
+  warning: Live data in does not match the trained examples
+  error: 1
   trainOnLoad: 1
   m_TestingDataCollectedThisIteration: 0
   StartDelay: 0
